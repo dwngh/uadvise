@@ -37,7 +37,7 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   add += "<tbody>";
   let str;
   let color;
-  let index = -4;
+  let index = -amountOfUnsuccessedSpecialty + 1;
   list.forEach((item) => {
     let i = index;
     index++
