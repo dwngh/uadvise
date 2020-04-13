@@ -10,6 +10,8 @@
 
   <title>UniAdvise</title>
 
+  <!-- jquery -->
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,7 +24,6 @@
   <!-- Custom styles for this template -->
   <link href="css/resume.min.css" rel="stylesheet">
 
-  <script src = "js/require.js"></script>
 
 </head>
 
@@ -82,10 +83,10 @@
         <h2 class="mb-5">Tra cứu
 			<div class = "subheading mb-0"><p style = "font-size: 15px">Dữ liệu được sử dungj từ trang web https://diemthi.tuyensinh247.com/</p></div>
 		</h2>
-		<form action = "#result">
+		<form>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Khối ngành</label>
-				<select class="form-control">
+				<select class="form-control" id = "domain">
 				  <option id = "nhomnganh1">Kế toán - Kiểm toán</option>
 				  <option id = "nhomnganh2">Tài chính - Ngân hàng - Bảo hiểm</option>
 				  <option id = "nhomnganh3">Kinh tế - Quản trị kinh doanh - Thương Mại</option>
@@ -99,20 +100,152 @@
 				  <option id = "nhomnganh12">Mỹ thuật - Âm nhạc-Nghệ thuật</option>
 				</select>
 			</div>
+      <div class = "form-group">
+        <select class = "form-control" id = "province">
+          <option>Hà Nội</option>
+          <option>Tp Hồ Chí Minh</option>
+        </select>
+      </div>
 			<div class = "form-group">
 				<div class="row">
 					<div class="col">
-					  <input type="text" class="form-control" placeholder="Điểm dự kiến">
+					  <input type="text" class="form-control" placeholder="Điểm dự kiến" id = "score">
 					</div>
 					<div class="col">
-					  <input type="text" class="form-control" placeholder="Điểm cộng">
+            <select class = "form-control" id = "subject">
+              <option>A00</option>
+              <option>A01</option>
+              <option>A02</option>
+              <option>A03</option>
+              <option>A04</option>
+              <option>A06</option>
+              <option>A07</option>
+              <option>A08</option>
+              <option>A09</option>
+              <option>A10</option>
+              <option>A11</option>
+              <option>A15</option>
+              <option>A16</option>
+              <option>A17</option>
+              <option>B00</option>
+              <option>B01</option>
+              <option>B02</option>
+              <option>C00</option>
+              <option>C01</option>
+              <option>C02</option>
+              <option>C03</option>
+              <option>C04</option>
+              <option>C09</option>
+              <option>C10</option>
+              <option>C12</option>
+              <option>C13</option>
+              <option>C14</option>
+              <option>C15</option>
+              <option>C16</option>
+              <option>C19</option>
+              <option>C20</option>
+              <option>COO</option>
+              <option>D00</option>
+              <option>D01</option>
+              <option>D02</option>
+              <option>D03</option>
+              <option>D04</option>
+              <option>D05</option>
+              <option>D06</option>
+              <option>D07</option>
+              <option>D08</option>
+              <option>D09</option>
+              <option>D10</option>
+              <option>D11</option>
+              <option>D13</option>
+              <option>D14</option>
+              <option>D15</option>
+              <option>D16</option>
+              <option>D17</option>
+              <option>D18</option>
+              <option>D19</option>
+              <option>D20</option>
+              <option>D25</option>
+              <option>D26</option>
+              <option>D27</option>
+              <option>D28</option>
+              <option>D29</option>
+              <option>D30</option>
+              <option>D55</option>
+              <option>D63</option>
+              <option>D65</option>
+              <option>D66</option>
+              <option>D69</option>
+              <option>D70</option>
+              <option>D71</option>
+              <option>D72</option>
+              <option>D78</option>
+              <option>D79</option>
+              <option>D80</option>
+              <option>D81</option>
+              <option>D82</option>
+              <option>D83</option>
+              <option>D84</option>
+              <option>D87</option>
+              <option>D88</option>
+              <option>D90</option>
+              <option>D91</option>
+              <option>D92</option>
+              <option>D93</option>
+              <option>D94</option>
+              <option>D95</option>
+              <option>D96</option>
+              <option>D97</option>
+              <option>D98</option>
+              <option>D99</option>
+              <option>DD0</option>
+              <option>DD1</option>
+              <option>DOI</option>
+              <option>H00</option>
+              <option>H01</option>
+              <option>H02</option>
+              <option>H03</option>
+              <option>H04</option>
+              <option>H05</option>
+              <option>H06</option>
+              <option>H07</option>
+              <option>H08</option>
+              <option>K01</option>
+              <option>R05</option>
+              <option>R06</option>
+              <option>R07</option>
+              <option>R08</option>
+              <option>R09</option>
+              <option>R15</option>
+              <option>R16</option>
+              <option>R17</option>
+              <option>R19</option>
+              <option>R20</option>
+              <option>R22</option>
+              <option>R24</option>
+              <option>R25</option>
+              <option>R26</option>
+              <option>S01</option>
+              <option>V00</option>
+              <option>V01</option>
+              <option>V02</option>
+              <option>V03</option>
+              <option>V04</option>
+              <option>V05</option>
+              <option>V06</option>
+              <option>V07</option>
+              <option>V08</option>
+              <option>V10</option>
+            </select>
 					</div>
 				</div>
 			</div>
 		</form>
     <div class="form-group row">
       <div class="col-sm-10">
-        <button class="btn btn-primary" value = "#result" onclick="testing()">Tra cứu</button>
+      <a href = "#result">
+        <button class="btn btn-primary" value = "#result" onclick="start()">Tra cứu</button>
+      </a>
       </div>
     </div>
 	<!--
@@ -167,9 +300,13 @@
 
 	<div id = "result">
 		<section class="p-3 p-lg-5 d-flex justify-content-center">
-	<div>
-	</section
+      <table id = "resultTable" class="table table-hover"></table>
+	  </section>
   </div>
+
+  <!-- Custom scripts for this template -->
+  <script src="uadvise/initialize.js"></script>
+  <script src="uadvise/processing.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -178,9 +315,7 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
-  <script src="test.js"></script>
 
 </body>
 
