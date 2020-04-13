@@ -38,7 +38,7 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   let index = 1;
   list.forEach((item) => {
     let i = index;
-    if (score > item.Score[0]) {color = "primary";index++;}
+    if (score > item.Score[0]) {color = "success";index++;}
     else if (score < item.Score[0]) {color ="danger";i = -1}
     else {color = "warning";index++;}
     str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
