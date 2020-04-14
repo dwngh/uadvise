@@ -50,7 +50,7 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   });
   add +="</tbody></table>";
   document.getElementById("resultTable").innerHTML = add
-
+  document.getElementById("return").innerHTML = "<a href = '#finding' style = 'text-align:center;color:red; font-size:14'>Thử lại</a>"
 }
 
 function isThisSpecialtySuccess(score, item){
