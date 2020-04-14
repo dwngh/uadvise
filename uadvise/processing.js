@@ -31,8 +31,8 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   let add;
   document.getElementById("resultTable").innerHTML = "";
   // thead
-  add = "<h1 style = 'text-align:center;color:red; font-size:14'>Tất cả những kết quả dưới đây đều chỉ mang tính tham khảo, xin vui lòng tìm hiểu kỹ hơn trước khi chọn nguyện vọng thực sự. Và nếu có sai sót thì hãy qua phần support để đóng góp cho dự án</h1>";
-  add += "<thead class = 'thead-light'><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
+  document.getElementById("warning").innerHTML = "<p style = 'text-align:center;color:red; font-size:14'>Tất cả những kết quả dưới đây đều chỉ mang tính tham khảo, xin vui lòng tìm hiểu kỹ hơn trước khi chọn nguyện vọng thực sự. Và nếu có sai sót thì hãy qua phần support để đóng góp cho dự án</p>";
+  add = "<thead class = 'thead-light'><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
 
   // tbody
   add += "<tbody>";
