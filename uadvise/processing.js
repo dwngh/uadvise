@@ -32,7 +32,7 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   document.getElementById("resultTable").innerHTML = "";
   // thead
   document.getElementById("warning").innerHTML = "<p style = 'text-align:center;color:red; font-size:14'>Tất cả những kết quả dưới đây đều chỉ mang tính tham khảo, xin vui lòng tìm hiểu kỹ hơn trước khi chọn nguyện vọng thực sự. Và nếu có sai sót thì hãy qua phần feedback để đóng góp cho dự án</p>";
-  add = "<thead class = 'thead-light'><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
+  add = "<thead class = ''><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
 
   // tbody
   add += "<tbody>";
@@ -42,8 +42,9 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
   list.forEach((item) => {
     let i = index;
     index++
-    if (score > item.Score[0]) {color = "success";}
-    else if (score < item.Score[0]) {color ="danger";}
+    // change for not suitable to use
+    if (score > item.Score[0]) {color = "succes";}
+    else if (score < item.Score[0]) {color ="dange";}
     else {color = "warning";index++;}
     str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
     add += str;

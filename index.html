@@ -19,16 +19,20 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <style media="screen">
+    div{
+      color:red;
+    }
+  </style>
 
-
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
+  <!-- Custom styles for this template
+  <link href="css/resume.min.css" rel="stylesheet">-->
 
 
 </head>
 
-<body id="page-top">
-
+<body id="page-to" style = "background-color:black">
+<!--
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
     </a>
@@ -49,18 +53,18 @@
       </ul>
     </div>
   </nav>
-
-  <div class="container-fluid p-0">
+-->
+  <div class="container-fluid">
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">Uni
-          <span class="text-primary">Advise</span>
+        <h1 class="mb-0">
+          <span style="color:red">Xin lỗi :((</span>
         </h1>
+        <!--
         <div class="subheading mb-5">Đây là dự án để giúp các bạn học sinh lóp 12 có thể có được những lựa chọn nguyện vọng sáng suốt hơn
         </div>
         <p class="lead mb-5 text-success">Chúc các bạn sẽ chinh phục thành công kỳ thi năm nay !</p>
-        <!--
 		<div class="social-icons">
           <a href="#">
             <i class="fab fa-linkedin-in"></i>
@@ -81,7 +85,7 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="finding">
+    <section style = "border-style: solid;border-color:red; padding: 10px;" class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="finding">
       <div class="w-100">
         <h2 class="mb-5">Tra cứu
 			<div class = "subheading mb-0"><p style = "font-size: 10px">Dữ liệu được sử dụng từ trang web https://diemthi.tuyensinh247.com/</p></div>
@@ -89,14 +93,14 @@
 		<form>
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Khối ngành</label>
-				<select class="form-control" id = "domain">
+				<select class="form-contro" id = "domain">
 				  <option>Kế toán - Kiểm toán  </option><option>Tài chính - Ngân hàng- Bảo hiểm  </option><option>Kinh tế - Quản trị kinh doanh - Thương Mại  </option><option>Ngoại thương - Xuất nhập khẩu - KTế quốc tế  </option><option>Ngoại giao - Ngoại ngữ  </option><option>Báo chí - Marketing - Quảng cáo - PR  </option><option>Công nghệ thông tin - Tin học  </option><option>Thiết kế đồ họa - Game - Đa phương tiện  </option><option>Công an - Quân đội  </option><option>Luật - Tòa án
           </option><option>Xây dựng - Kiến trúc-Giao thông  </option><option>Mỹ thuật - Âm nhạc-Nghệ thuật  </option><option>Thể dục - Thể thao  </option><option>Du lịch-Khách sạn  </option><option>Văn hóa - Chính trị - Khoa học Xã hội  </option><option>Nhân sự - Hành chính  </option><option>Tâm lý  </option><option>Sư phạm - Giáo dục  </option><option>Mỏ - Địa chất  </option><option>Tài nguyên- Môi trường  </option><option>Thủy sản-Lâm Nghiệp-Nông nghiệp  </option>
           <option>Hàng hải-Thủy lợi-Thời tiết  </option><option>Y - Dược  </option><option>Bác sĩ thú y  </option><option>Ô tô - Cơ khí -Chế tạo  </option><option>Điện lạnh- Điện tử - Điện - Tự động hóa  </option><option>Công nghệ In - Giấy  </option><option>Công nghệ chế biến thực phẩm  </option><option>Công nghệ sinh - Hóa  </option><option>Thời trang- May mặc  </option><option>Công nghệ vật liệu  </option><option>Hàng không - Vũ trụ- Hạt nhân  </option><option>Toán học và thống kê  </option>
 				</select>
 			</div>
       <div class = "form-group">
-        <select class = "form-control" id = "province">
+        <select class = "form-contro" id = "province">
           <option>Hà Nội</option>
           <option>Tp Hồ Chí Minh</option>
         </select>
@@ -104,10 +108,10 @@
 			<div class = "form-group">
 				<div class="row">
 					<div class="col">
-					  <input type="text" class="form-control" placeholder="Điểm dự kiến" id = "score">
+					  <input type="text" class="form-contro" placeholder="Điểm dự kiến" id = "score">
 					</div>
 					<div class="col">
-            <select class = "form-control" id = "subject">
+            <select class = "form-contro" id = "subject">
               <option>A00</option>
               <option>A01</option>
               <option>A02</option>
@@ -238,8 +242,9 @@
     <div class="form-group row">
       <div class="col-sm-10">
       <a href = "#result">
-        <button class="btn btn-primary" value = "#result" onclick="start()">Tra cứu</button>
+        <button class="disabled" value = "#result" onclick="start()">Tra cứu</button>
       </a>
+      <p style = "color:red">Hiện tại chưa rõ phương án tuyển sinh của tất cả các trường, vậy nên kết quả tra cứu ko còn mang giá trị</p>
       </div>
     </div>
 	<!--
@@ -303,9 +308,9 @@
   <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="feedback">
     <div class="w-100" style = "text-align:center">
       <h2 class = "mb-0">
-        <span class="text-primary">Cảm ơn các bạn</span>
+        <span class="text-danger">Cảm ơn các bạn</span>
       </h2>
-      <p class="lead mb-5 text-success">Nếu phát hiện sai sót thì hãy báo qua địa chỉ email này nhé: <a href="wanghcr11@gmail.com">wanghcr11@gmail.com</a></p>
+      <p class="lead mb-5 text-danger">Nếu phát hiện sai sót thì hãy báo qua địa chỉ email này nhé: <a href="wanghcr11@gmail.com">wanghcr11@gmail.com</a></p>
       <!--
   <div class="social-icons">
         <a href="#">
