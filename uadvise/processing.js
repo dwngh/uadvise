@@ -45,7 +45,7 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
     // change for not suitable to use
     if (score > item.Score[0]) {color = "succes";}
     else if (score < item.Score[0]) {color ="dange";}
-    else {color = "warning";index++;}
+    else {color = "warnin";index++;}
     str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
     add += str;
   });
