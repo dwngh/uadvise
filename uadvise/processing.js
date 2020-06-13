@@ -43,9 +43,9 @@ function generateOutput(list, score, amountOfUnsuccessedSpecialty){
     let i = index;
     index++
     // change for not suitable to use
-    if (score > item.Score[0]) {color = "succes";}
-    else if (score < item.Score[0]) {color ="dange";}
-    else {color = "warnin";index++;}
+    if (score > item.Score[0]) {color = "success";}
+    else if (score < item.Score[0]) {color ="danger";}
+    else {color = "warning";index++;}
     str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
     add += str;
   });
