@@ -2,7 +2,7 @@ function start(){
   var subject = document.getElementById("subject").value;
   var domain = document.getElementById("domain").value;
 
-  var score = parseInt(document.getElementById("score").value);
+  var score = parseFloat(document.getElementById("score").value);
   var pos = document.getElementById("province").value;
   if (!Number.isNaN(score)){
     Processing(ConvertToDomainId(domain), ConvertToProvinceId(pos), score, subject)
