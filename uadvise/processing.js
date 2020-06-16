@@ -7,7 +7,7 @@ function start(){
   var pos = document.getElementById("province").value;
   if (!Number.isNaN(score)){
     Processing(ConvertToDomainId(domain), ConvertToProvinceId(pos), score, subject)
-  } else console.log('Failed in getting your score');
+  } else alert('Failed in getting your score');
 }
 
 function ConvertToProvinceId(str){
