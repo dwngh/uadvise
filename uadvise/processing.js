@@ -1,3 +1,4 @@
+
 function start(){
   var subject = document.getElementById("subject").value;
   var domain = document.getElementById("domain").value;
@@ -8,89 +9,6 @@ function start(){
     Processing(ConvertToDomainId(domain), ConvertToProvinceId(pos), score, subject)
   } else console.log('Failed in getting your score');
 }
-
-
-function Processing(domain,pos,score, subject){
-  console.log(domain);
-  let data = AllDomain[domain - 1][pos];
-  let list = new SpecialStack(15, 5);
-  let amountOfUnsuccessedSpecialty = 0;
-  let index = 0;
-  while (amountOfUnsuccessedSpecialty < 5 && index < data.length){
-    if (data[index].Subject == subject){
-      list.push(data[index]);
-      if (!isThisSpecialtySuccess(score, data[index]))
-          amountOfUnsuccessedSpecialty++;
-    }
-    index ++;
-  }
-  generateOutput(list.data.reverse(), score, amountOfUnsuccessedSpecialty);
-}
-
-function generateOutput(list, score, amountOfUnsuccessedSpecialty){
-  let add;
-  document.getElementById("resultTable").innerHTML = "";
-  // thead
-  document.getElementById("warning").innerHTML = "<p style = 'text-align:center;color:red; font-size:14'>Tất cả những kết quả dưới đây đều chỉ mang tính tham khảo, xin vui lòng tìm hiểu kỹ hơn trước khi chọn nguyện vọng thực sự. Và nếu có sai sót thì hãy qua phần feedback để đóng góp cho dự án</p>";
-  add = "<thead class = ''><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
-
-  // tbody
-  add += "<tbody>";
-  let str;
-  let color;
-  let index = -amountOfUnsuccessedSpecialty + 1;
-  list.forEach((item) => {
-    let i = index;
-    index++
-    // change for not suitable to use
-    if (score > item.Score[0]) {color = "success";}
-    else if (score < item.Score[0]) {color ="danger";}
-    else {color = "warning";index++;}
-    str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
-    add += str;
-  });
-  add +="</tbody></table>";
-  document.getElementById("resultTable").innerHTML = add
-  document.getElementById("return").innerHTML = "<a href = '#finding' style = 'text-align:center;color:red; font-size:14'>Thử lại</a>"
-}
-
-function isThisSpecialtySuccess(score, item){
-  if (score >= item.Score[0]) return true;
-  else return false;
-}
-
-class SpecialStack {
-  constructor(capability, UnsuccessCase) {
-    this.data = [];
-    this.capability = capability;
-    this.UnsuccessCase = UnsuccessCase;
-  }
-  isEmpty() {
-    return this.data.length === 0;
-  }
-  isFull() {
-    return this.data.length === this.capability;
-  }
-
-  isFullOfSuccessCase(){
-    return this.data.length - this.UnsuccessCase === this.capability;
-  }
-
-  push(item) {
-    if (this.isFull()) this.data.shift();
-    this.data.push(item);
-    return true;
-  }
-  peek() {
-    if (this.isEmpty()) return undefined;
-    return this.data[this.data.length - 1];
-  }
-  clear() {
-    this.data.length = 0;
-  }
-}
-
-
 
 function ConvertToProvinceId(str){
   switch (str) {
@@ -141,4 +59,86 @@ function ConvertToDomainId(str){
     default:
       return 0;
   }
+}
+
+
+function Processing(domain,pos,score, subject){
+  console.log(domain);
+  let data = AllDomain[domain - 1][pos];
+  let list = new SpecialStack(15, 5);
+  let amountOfUnsuccessedSpecialty = 0;
+  let index = 0;
+  while (amountOfUnsuccessedSpecialty < 5 && index < data.length){
+    if (data[index].Subject == subject){
+      list.push(data[index]);
+      if (!isThisSpecialtySuccess(score, data[index]))
+          amountOfUnsuccessedSpecialty++;
+    }
+    index ++;
+  }
+  generateOutput(list.data.reverse(), score, amountOfUnsuccessedSpecialty);
+}
+
+
+function isThisSpecialtySuccess(score, item){
+  if (score >= item.Score[0]) return true;
+  else return false;
+}
+
+class SpecialStack {
+  constructor(capability, UnsuccessCase) {
+    this.data = [];
+    this.capability = capability;
+    this.UnsuccessCase = UnsuccessCase;
+  }
+  isEmpty() {
+    return this.data.length === 0;
+  }
+  isFull() {
+    return this.data.length === this.capability;
+  }
+
+  isFullOfSuccessCase(){
+    return this.data.length - this.UnsuccessCase === this.capability;
+  }
+
+  push(item) {
+    if (this.isFull()) this.data.shift();
+    this.data.push(item);
+    return true;
+  }
+  peek() {
+    if (this.isEmpty()) return undefined;
+    return this.data[this.data.length - 1];
+  }
+  clear() {
+    this.data.length = 0;
+  }
+}
+
+function generateOutput(list, score, amountOfUnsuccessedSpecialty){
+  let add;
+  document.getElementById("resultTable").innerHTML = "";
+  // thead
+  document.getElementById("warning").innerHTML = "<p style = 'text-align:center;color:red; font-size:14'>Tất cả những kết quả dưới đây đều chỉ mang tính tham khảo, xin vui lòng tìm hiểu kỹ hơn trước khi chọn nguyện vọng thực sự. Và nếu có sai sót thì hãy qua phần feedback để đóng góp cho dự án</p>";
+  add = "<thead class = ''><tr><th scope='col'>Id</th><th scope='col'>Tên Ngành</th><th scope='col'>Điểm</th><th scope='col'>Trường</th></tr></thead>";
+
+  // tbody
+  add += "<tbody>";
+  let str;
+  let color;
+  let index = -amountOfUnsuccessedSpecialty + 1;
+  list.forEach((item) => {
+    let i = index;
+    index++
+    // change for not suitable to use
+    if (score > item.Score[0]) {color = "success";}
+    else if (score < item.Score[0]) {color ="danger";}
+    else {color = "warning";index++;}
+    str = "<tr class='table-" + color + "'><td>" + i + "</td><td>" +item.Name+ "</td><td>" + item.Score[0] + "</td><td>" + item.UniName+ "</td></tr>";
+    add += str;
+  });
+  add +="</tbody></table>";
+  document.getElementById("resultTable").innerHTML = add
+  document.getElementById("return").innerHTML = "<a href = '#finding' style = 'text-align:center;color:red; font-size:14'>Thử lại</a>"
 }
